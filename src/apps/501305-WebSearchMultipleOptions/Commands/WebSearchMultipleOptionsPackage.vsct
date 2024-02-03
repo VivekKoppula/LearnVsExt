@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+
+  <Extern href="vsshlids.h"/>
+
+  <Include href="KnownImageIds.vsct"/>
+
+  <Commands package="guidWebSearchMultipleOptionsPackage">
+
+    <Groups>
+      <Group guid="guidWebSearchMultipleOptionsPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidWebSearchMultipleOptionsPackageCmdSet" id="WebSearchCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidWebSearchMultipleOptionsPackageCmdSet" id="MyMenuGroup" />
+
+		<Icon guid="ImageCatalogGuid" id="SearchMember"/>
+
+		<CommandFlag>IconIsMoniker</CommandFlag>
+
+        <Strings>
+          <ButtonText>Seach web</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+  </Commands>
+
+  <Symbols>
+    <GuidSymbol name="guidWebSearchMultipleOptionsPackage" value="{96454401-ca43-4ef8-85eb-6d6b494c0a33}" />
+    <GuidSymbol name="guidWebSearchMultipleOptionsPackageCmdSet" value="{efb8b346-9d9f-446f-aac4-f8b3962f82e5}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="WebSearchCommandId" value="0x0100" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>

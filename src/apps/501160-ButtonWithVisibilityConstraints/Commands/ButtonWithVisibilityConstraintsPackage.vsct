@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <Extern href="stdidcmd.h"/>
+
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidButtonWithVisibilityConstraintsPackage">
+
+    <Groups>
+      <Group guid="guidButtonWithVisibilityConstraintsPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+      </Group>
+    </Groups>
+
+
+    <Buttons>
+
+      <Button guid="guidButtonWithVisibilityConstraintsPackageCmdSet" id="CsVbFileVisibleCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidButtonWithVisibilityConstraintsPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+      <!--The following must be set for VisibilityConstraints to work (see below) -->
+		  <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Invoke CsVbFileVisibleCommand</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+
+      <Bitmap guid="guidImages" href="Resources\CsVbFileVisibleCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+    </Bitmaps>
+  </Commands>
+
+	<VisibilityConstraints>
+		<VisibilityItem guid="guidButtonWithVisibilityConstraintsPackageCmdSet" id="CsVbFileVisibleCommandId" context="uiContextSupportedFiles" />
+	</VisibilityConstraints>	
+	
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidButtonWithVisibilityConstraintsPackage" value="{508ffd1a-37af-4445-be4b-b321feed260d}" />
+
+	<!-- This is the UI Context guid that must match the one in ButtonWithVisibilityConstraintsPackage.cs -->
+	<GuidSymbol name="uiContextSupportedFiles" value="{24551deb-f034-43e9-a279-0e541241687e}" />
+
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidButtonWithVisibilityConstraintsPackageCmdSet" value="{7ca17223-d0f2-47a4-85d0-697e6636fd45}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="CsVbFileVisibleCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidImages" value="{1891515b-4e0c-498d-88f0-fcccb1534af5}" >
+      <IDSymbol name="bmpPic1" value="1" />
+      <IDSymbol name="bmpPic2" value="2" />
+      <IDSymbol name="bmpPicSearch" value="3" />
+      <IDSymbol name="bmpPicX" value="4" />
+      <IDSymbol name="bmpPicArrows" value="5" />
+      <IDSymbol name="bmpPicStrikethrough" value="6" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
